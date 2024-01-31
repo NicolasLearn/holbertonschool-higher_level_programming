@@ -7,3 +7,4 @@ Directory project :
 3. python-import_modules
 4. Python - Data Structures: Lists, Tuples
 5. Python - More Data Structures: Set, Dictionary
+6. Python - Exceptions
