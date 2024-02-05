@@ -11,6 +11,8 @@ Note:
     This module does not contain any dependencies
     or system requirements.
 """
+
+
 class Square:
     """This class represent a square.
 
