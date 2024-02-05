@@ -8,3 +8,4 @@ Directory project :
 4. Python - Data Structures: Lists, Tuples
 5. Python - More Data Structures: Set, Dictionary
 6. Python - Exceptions
+7. Python - Classes and Objects
