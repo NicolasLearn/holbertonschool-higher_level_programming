@@ -29,10 +29,11 @@ class Square:
     def size(self):
         """This method return the size of the square"""
         return self.__size
+
     @size.setter
     def size(self, size):
         """This method modify the size of the square
-        
+
         Args:
             size (int): The size of the square.
         """
@@ -50,7 +51,7 @@ class Square:
     def my_print(self):
         """This method print the current square area"""
         if self.size == 0:
-                print("")
+            print("")
         else:
             for i in range(self.size, 0, -1):
                 for j in range(self.size, 0, -1):
