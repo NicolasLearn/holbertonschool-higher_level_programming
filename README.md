@@ -9,3 +9,5 @@ Directory project :
 5. Python - More Data Structures: Set, Dictionary
 6. Python - Exceptions
 7. Python - Classes and Objects
+8. Python - Test-driven development
+9. Python - More Classes and Objects
