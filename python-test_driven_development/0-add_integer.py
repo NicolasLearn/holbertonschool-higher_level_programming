@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-"""This modul contain a function that add two numbers"""
+"""
+This modul contain a function that add two numbers
+
+add_integer: Return the sum to the addition of the two parameters
+    args: a(int or float), b(int or float, default=98)
+"""
 
 
 def add_integer(a, b=98):
