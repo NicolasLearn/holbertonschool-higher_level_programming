@@ -3,20 +3,30 @@ This modul is a doctest for my modul '0-add_integer.py'
 >>> add_integer = __import__('0-add_integer').add_integer
 
 
-# Normal addition test
-
+# Normal
 >>> add_integer(0)
 98
 >>> add_integer(-1)
 97
->>> add_integer(10.5)
-108
+>>> add_integer(10.5, 90)
+100
 
-# Type Errors
+
+# Errors
 >>> add_integer(10+5j)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(5, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
 
 >>> add_integer([])
 Traceback (most recent call last):
@@ -62,3 +72,38 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('-inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float(NaN))
+Traceback (most recent call last):
+...
+NameError: name 'NaN' is not defined
+
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(int('nan'))
+Traceback (most recent call last):
+...
+ValueError: invalid literal for int() with base 10: 'nan'
+
+>>> add_integer(True, False)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(True, False)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
