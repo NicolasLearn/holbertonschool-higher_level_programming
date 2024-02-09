@@ -1,0 +1,85 @@
+This modul is a doctest for my modul '0-add_integer.py'
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+
+### Normal addition
+
+
+# With Two parameters, integer, addition
+>>> add_integer(2, 5)
+7
+
+# With One parameter, integer, addition
+>>> add_integer(2)
+100
+
+# With integer addition, in One parameter
+>>> add_integer(1+1)
+100
+
+# With second parameter float, addition
+>>> add_integer(50, 50.5)
+100
+
+# With first parameter Float, and second one negative, addition
+>>> add_integer(100.2, -5)
+95
+
+
+### Error addition
+
+
+# With integer and string addition, in One parameter
+>>> add_integer(1+j)
+Traceback (most recent call last):
+...
+NameError: name 'j' is not defined
+
+# With integer addition containing string, in One parameter
+>>> add_integer(1+1j)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+# With zero parameter, addtion
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+# With first parameter String addition
+>>> add_integer("str", 5)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+# With second parameter String addition
+>>> add_integer(5, "str")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+# With None in parameter
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+# With list in two parameter
+>>> add_integer([50], [50])
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+# With list in one parameter
+>>> add_integer([50], 50)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+# With empty list in parameter
+>>> add_integer([])
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
