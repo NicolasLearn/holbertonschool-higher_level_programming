@@ -19,6 +19,8 @@ My name is 35 euros
 >>> say_my_name("", "")
 My name is  
 
+>>> say_my_name(str(float('nan')))
+My name is nan 
 
 # ERROR TEST
 
@@ -33,3 +35,13 @@ TypeError: last_name must be a string
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
+
+>>> say_my_name(True, "bob")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("Bob", 1.2)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
