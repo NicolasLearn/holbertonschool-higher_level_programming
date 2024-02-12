@@ -93,6 +93,16 @@ This file is a DOCTEST for the module "1-my_list.py"
         >>> print(my_list)
         [-1, -2, -3, -4, -5]
 
+        # one element #
+        >>> my_list = MyList()
+        >>> my_list.append(-5)
+        >>> print(my_list)
+        [-5]
+        >>> my_list.print_sorted()
+        [-5]
+        >>> print(my_list)
+        [-5]
+
     ### tests with mixt integer
 
         # negative and positive integer
@@ -108,6 +118,33 @@ This file is a DOCTEST for the module "1-my_list.py"
         [-9, -4, -1, 2, 5]
         >>> print(my_list)
         [-1, 2, -9, -4, 5]
+
+        # great and small negative and positive integer
+        >>> my_list = MyList()
+        >>> my_list.append(-50)
+        >>> my_list.append(2)
+        >>> my_list.append(90)
+        >>> my_list.append(-4)
+        >>> my_list.append(54)
+        >>> print(my_list)
+        [-50, 2, 90, -4, 54]
+        >>> my_list.print_sorted()
+        [-50, -4, 2, 54, 90]
+        >>> print(my_list)
+        [-50, 2, 90, -4, 54]
+
+        # with few 0 and one integer
+        >>> my_list = MyList()
+        >>> my_list.append(50)
+        >>> my_list.append(0)
+        >>> my_list.append(0)
+        >>> my_list.append(0)
+        >>> print(my_list)
+        [50, 0, 0, 0]
+        >>> my_list.print_sorted()
+        [0, 0, 0, 50]
+        >>> print(my_list)
+        [50, 0, 0, 0]
 
         # with only 0
         >>> my_list = MyList()

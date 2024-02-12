@@ -9,5 +9,5 @@ class MyList(list):
         list (list): Parent class of MyList
     """
     def print_sorted(self):
-        """Print the list of the object in sorted in ascending order"""
+        """Print the list of the object sorted in ascending order"""
         print(sorted(self))
