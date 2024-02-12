@@ -11,3 +11,6 @@ Directory project :
 7. Python - Classes and Objects
 8. Python - Test-driven development
 9. Python - More Classes and Objects
+10. Python - Everything is object
+11. Python - Inheritance
+12. Python - Input/Output
