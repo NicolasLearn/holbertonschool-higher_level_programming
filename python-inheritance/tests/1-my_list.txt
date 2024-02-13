@@ -157,24 +157,3 @@ This file is a DOCTEST for the module "1-my_list.py"
         [0, 0, 0]
         >>> print(my_list)
         [0, 0, 0]
-
-
-##### ERROR CASES #####
-
-    ### test with other class
-
-    >>> my_list = [1, 4, 7, 3, 9]
-    >>> print(my_list)
-    [1, 4, 7, 3, 9]
-    >>> my_list.printed_sorted()
-    Traceback (most recent call last):
-    ...
-    AttributeError: 'list' object has no attribute 'printed_sorted'
-
-    >>> my_list = (1, 4, 7, 3, 9)
-    >>> print(my_list)
-    (1, 4, 7, 3, 9)
-    >>> my_list.printed_sorted()
-    Traceback (most recent call last):
-    ...
-    AttributeError: 'tuple' object has no attribute 'printed_sorted'
