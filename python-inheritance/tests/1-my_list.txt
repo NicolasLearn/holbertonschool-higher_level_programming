@@ -22,6 +22,10 @@ This file is a DOCTEST for the module "1-my_list.py"
         >>> my_list = MyList()
         >>> print(my_list)
         []
+        >>> my_list.print_sorted()
+        []
+        >>> print(my_list)
+        []
 
     ### tests with positive integer
 
