@@ -1,33 +1,54 @@
 Project Python - Almost a circle
 
-Step by step
-    Write the first class Base
+STEP BY STEP
+
+    Write the first class Base.
+
     Write the class Rectangle that inherits from Base
+
     Update the class Rectangle by adding validation of all setter methods and instantiation (id excluded)
+
     Update the class Rectangle by adding the public method def area(self): that returns the area value of the Rectangle instance
+
     Update the class Rectangle by adding the public method def display(self): that prints in stdout the Rectangle instance with the character # - you don’t need to handle x and y here
+
     Update the class Rectangle by overriding the str method so that it returns [Rectangle] instance
+
     Update the class Rectangle by improving the public method def display(self): to print in stdout the Rectangle instance with the character # by taking care of x and y
+
     Update the class Rectangle by adding the public method def update(self, *args): that assigns an argument to each attribute
+
     Update the class Rectangle by updating the public method def update(self, *args): by changing the prototype to update(self, *args, kwargs) that assigns a key/value argument to attributes
+
     Write the class Square that inherits from Rectangle
+
     Update the class Square by adding the public getter and setter size
+
     Update the class Square by adding the public method def update(self, *args, kwargs) that assigns attributes
+
     Update the class Rectangle by adding the public method def to_dictionary(self): that returns the dictionary representation of a Rectangle
+
     Update the class Square by adding the public method def to_dictionary(self): that returns the dictionary representation of a Square
+
     Update the class Base by adding the class method def savetofile(cls, listobjs): that writes the JSON string representation of listobjs to a file
+
     Update the class Base by adding the static method def fromjsonstring(jsonstring): that returns the list of the JSON string representation jsonstring
+
     Update the class Base by adding the class method def create(cls, dictionary): that returns an instance with all attributes already set
+
     Update the class Base by adding the class method def loadfromfile(cls): that returns a list of instances
+
 
 TASKS
 
 0. If it's not tested it doesn't work.
 mandatory
+
     All your files, classes and methods must be unit tested and be PEP 8 validated.
 
 1. Base class
 mandatory
+
     Write the first class Base:
 
     Create a folder named models with an empty file __init__.py inside - with this file, the folder will become a Python package
@@ -43,6 +64,7 @@ mandatory
 
 2. First Rectangle
 mandatory
+
     Write the class Rectangle that inherits from Base:
 
         In the file models/rectangle.py
@@ -62,6 +84,7 @@ mandatory
 
 3. Validate attributes
 mandatory
+
     Update the class Rectangle by adding validation of all setter methods and instantiation (id excluded):
 
         If the input is not an integer, raise the TypeError exception with the message: <name of the attribute> must be an integer. Example: width must be an integer
@@ -70,22 +93,27 @@ mandatory
 
 4. Area first
 mandatory
+
     Update the class Rectangle by adding the public method def area(self): that returns the area value of the Rectangle instance.
 
 5. Display #0
 mandatory
+
     Update the class Rectangle by adding the public method def display(self): that prints in stdout the Rectangle instance with the character # - you don’t need to handle x and y here.
 
 6. __str__
 mandatory
+
     Update the class Rectangle by overriding the __str__ method so that it returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
 
 7. Display #1
 mandatory
+
     Update the class Rectangle by improving the public method def display(self): to print in stdout the Rectangle instance with the character # by taking care of x and y
 
 8. Update #0
 mandatory
+
     Update the class Rectangle by adding the public method def update(self, *args): that assigns an argument to each attribute:
 
         1st argument should be the id attribute
@@ -97,6 +125,7 @@ mandatory
 
 9. Update #1
 mandatory
+
     Update the class Rectangle by updating the public method def update(self, *args): by changing the prototype to update(self, *args, **kwargs) that assigns a key/value argument to attributes:
 
         **kwargs can be thought of as a double pointer to a dictionary: key/value
@@ -107,6 +136,7 @@ mandatory
 
 10. And now, the Square!
 mandatory
+
     Write the class Square that inherits from Rectangle:
 
         In the file models/square.py
@@ -120,6 +150,7 @@ mandatory
 
 11. Square size
 mandatory
+
     Update the class Square by adding the public getter and setter size
 
         The setter should assign (in this order) the width and the height - with the same value
@@ -127,6 +158,7 @@ mandatory
 
 12. Square update
 mandatory
+
     Update the class Square by adding the public method def update(self, *args, **kwargs) that assigns attributes:
 
         *args is the list of arguments - no-keyworded arguments
@@ -140,6 +172,7 @@ mandatory
 
 13. Rectangle instance to dictionary representation
 mandatory
+
     Update the class Rectangle by adding the public method def to_dictionary(self): that returns the dictionary representation of a Rectangle:
 
     This dictionary must contain:
@@ -152,6 +185,7 @@ mandatory
 
 14. Square instance to dictionary representation
 mandatory
+
     Update the class Square by adding the public method def to_dictionary(self): that returns the dictionary representation of a Square:
 
     This dictionary must contain:
@@ -163,6 +197,7 @@ mandatory
 
 15. Dictionary to JSON string
 mandatory
+
     JSON is one of the standard formats for sharing data representation.
 
     Update the class Base by adding the static method def to_json_string(list_dictionaries): that returns the JSON string representation of list_dictionaries:
@@ -173,6 +208,7 @@ mandatory
 
 16. JSON string to file
 mandatory
+
     Update the class Base by adding the class method def save_to_file(cls, list_objs): that writes the JSON string representation of list_objs to a file:
 
         list_objs is a list of instances who inherits of Base - example: list of Rectangle or list of Square instances
@@ -183,6 +219,7 @@ mandatory
 
 17. JSON string to dictionary
 mandatory
+
     Update the class Base by adding the static method def from_json_string(json_string): that returns the list of the JSON string representation json_string:
 
         json_string is a string representing a list of dictionaries
@@ -191,6 +228,7 @@ mandatory
 
 18. Dictionary to Instance
 mandatory
+
     Update the class Base by adding the class method def create(cls, **dictionary): that returns an instance with all attributes already set:
 
         **dictionary can be thought of as a double pointer to a dictionary
@@ -203,6 +241,7 @@ mandatory
 
 19. File to instances
 mandatory
+
     Update the class Base by adding the class method def load_from_file(cls): that returns a list of instances:
 
         The filename must be: <Class name>.json - example: Rectangle.json
