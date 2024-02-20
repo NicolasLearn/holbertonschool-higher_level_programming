@@ -17,6 +17,7 @@ class Rectangle(Base):
         area(): Return the area of the rectangle.
 
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructor of the class. That used the parent constructor.
 
@@ -78,6 +79,17 @@ class Rectangle(Base):
         self.__y = value
 
     def integer_validator(self, name, value):
+        """Method that check if the given value is right.
+
+        Args:
+            name (str): Name of attribute checked.
+            value (int): Value to be assigned at the attribute.
+
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value <= 0 and if attribute is width or height
+            ValueError: If value < 0 and if attribute is x or y
+        """
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         elif ((name == "width") or (name == "height")) and (value <= 0):
@@ -86,16 +98,34 @@ class Rectangle(Base):
             raise ValueError(f"{name} must be >= 0")
 
     def area(self):
+        """Return the area of the rectangle."""
         return self.__height * self.__width
+
+    def display(self):
+        """Print the rectangle instance with the character (#).
+
+        (y): defines the number of blanklines before printing.
+        (x): defines the number of space before each line printing.
+        (height): defines the number of line to be printed.
+        (width): defines the number of character to be printed.
+        """
+        print("\n" * self.__y, end="")
+        for _ in range(self.__height):
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
+
+    def __str__(self):
+        """Return a sentence that describes the rectangle instance"""
+        string = "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                  self.id, self.__x, self.__y,
+                                                  self.__width, self.__height)
+        return string
 
 
 if __name__ == "__main__":
 
-    r1 = Rectangle(3, 2)
-    print(r1.area())
+    r1 = Rectangle(4, 6, 2, 1, 12)
+    print(r1)
 
-    r2 = Rectangle(2, 10)
-    print(r2.area())
-
-    r3 = Rectangle(8, 7, 0, 0, 12)
-    print(r3.area())
+    r2 = Rectangle(5, 5, 1)
+    print(r2)
