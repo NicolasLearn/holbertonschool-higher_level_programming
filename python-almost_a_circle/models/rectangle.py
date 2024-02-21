@@ -124,5 +124,10 @@ class Rectangle(Base):
 
     def update(self, *args):
         """Assigns an argument to each attribute"""
-        for arg in args:
+        name_attribute = ["id", "width", "height", "x", "y"]
+        try:
+            for (index, arg) in enumerate(args):
+                self.integer_validator(name_attribute[index], arg)
+                setattr(self, name_attribute[index], arg)
+        except IndexError:
             pass
