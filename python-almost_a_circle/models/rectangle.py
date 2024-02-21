@@ -15,7 +15,9 @@ class Rectangle(Base):
     Public method:
         integer_validator(): Check if the given value is right.
         area(): Return the area of the rectangle.
+        display(): Print the rectangle instance with the character (#).
         __str__(): Return a sentence that describes the rectangle instance.
+        update(): Update the value to each given attribute.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
