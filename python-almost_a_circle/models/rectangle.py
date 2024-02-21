@@ -16,7 +16,6 @@ class Rectangle(Base):
         integer_validator(): Check if the given value is right.
         area(): Return the area of the rectangle.
         __str__(): Return a sentence that describes the rectangle instance.
-
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -25,8 +24,8 @@ class Rectangle(Base):
         Args:
             width (int): Width of the rectangle.
             height (int): Height of the rectangle.
-            x (int): _description_. Defaults to 0.
-            y (int): _description_. Defaults to 0.
+            x (int): Abscissa of the rectangle. Defaults to 0.
+            y (int): Ordinate of the rectangle. Defaults to 0.
             id (int): Id of the current object created. Defaults to None.
         """
         super().__init__(id)
