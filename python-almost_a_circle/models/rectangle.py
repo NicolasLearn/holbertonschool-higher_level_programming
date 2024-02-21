@@ -18,6 +18,7 @@ class Rectangle(Base):
         display(): Print the rectangle instance with the character (#).
         __str__(): Return a sentence that describes the rectangle instance.
         update(): Update the value to each given attribute.
+        to_dictionnary(): Return the dict representation of the rectangle.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -147,3 +148,8 @@ class Rectangle(Base):
                 if key in name_attribute:
                     self.integer_validator(key, value)
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Return the dictionnary representation of the rectangle."""
+        return {"id": self.id, "width": self.__width, "height": self.__height,
+                "x": self.__x, "y": self.__y}
