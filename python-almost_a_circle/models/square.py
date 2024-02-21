@@ -15,10 +15,13 @@ class Square(Rectangle):
     Public method
         (from this class):
         __str__(): Return a sentence that describes the Square instance.
+        update(): Update the value to each given attribute.
+        to_dictionnary(): Return the dict representation of the square.
 
         (from parent class):
         integer_validator(): Check if the given value is right.
-        area(): Return the area of the rectangle.
+        area(): Return the area of the square.
+        display(): Print the square instance with the character (#).
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -74,3 +77,7 @@ class Square(Rectangle):
                 if key in name_attribute:
                     self.integer_validator(key, value)
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Return the dictionnary representation of the square."""
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
