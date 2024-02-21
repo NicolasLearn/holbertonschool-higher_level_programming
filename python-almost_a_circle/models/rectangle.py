@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""This module defines the class Rectangle that inherit of the class Base"""
+"""This module defines the class Rectangle that inherit of the class Base."""
 from base import Base
 
 
 class Rectangle(Base):
-    """Class that inherit of the class Base, that represent a Rectangle
+    """Class that inherit of the class Base, that represent a Rectangle.
 
     Args:
         Base: Parent class.
@@ -13,8 +13,9 @@ class Rectangle(Base):
         width, height, x, y : Handle with getter and setter.
 
     Public method:
-        integer_validator: Check if the given value is right.
+        integer_validator(): Check if the given value is right.
         area(): Return the area of the rectangle.
+        __str__(): Return a sentence that describes the rectangle instance.
 
     """
 
@@ -121,11 +122,7 @@ class Rectangle(Base):
                                                   self.__width, self.__height)
         return string
 
-
-if __name__ == "__main__":
-
-    r1 = Rectangle(4, 6, 2, 1, 12)
-    print(r1)
-
-    r2 = Rectangle(5, 5, 1)
-    print(r2)
+    def update(self, *args):
+        """Assigns an argument to each attribute"""
+        for arg in args:
+            pass
