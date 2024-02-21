@@ -122,12 +122,27 @@ class Rectangle(Base):
                                                   self.__width, self.__height)
         return string
 
-    def update(self, *args):
-        """Assigns an argument to each attribute"""
+    def update(self, *args, **kwargs):
+        """Update the value to each given attribute
+
+        2 choices for attributes updates:
+            With (args):
+                Argument order, see list (name_attribute).
+
+        If (args) is used, the (kwargs) will skipped.
+
+            With (kwargs):
+                We can used the model of (key=value) for update attributes.
+        """
         name_attribute = ["id", "width", "height", "x", "y"]
-        try:
+        if len(args) > 0:
             for (index, arg) in enumerate(args):
                 self.integer_validator(name_attribute[index], arg)
                 setattr(self, name_attribute[index], arg)
-        except IndexError:
-            pass
+                if index == 4:
+                    break
+        else:
+            for (key, value) in kwargs.items():
+                if key in name_attribute:
+                    self.integer_validator(key, value)
+                    setattr(self, key, value)
