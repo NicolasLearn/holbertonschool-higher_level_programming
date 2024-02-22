@@ -29,6 +29,7 @@ class Rectangle(Base):
         (from parent class)
         save_to_file(): Writes the JSON string representation to a file.
         create(): Returns an instance with all attributes already set.
+        load_from_file(): Returns a list of instances.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):

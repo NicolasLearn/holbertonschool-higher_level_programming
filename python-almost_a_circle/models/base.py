@@ -16,6 +16,7 @@ class Base:
     Class methods:
         save_to_file(): Writes the JSON string representation to a file.
         create(): Returns an instance with all attributes already set.
+        load_from_file(): Returns a list of instances.
     """
     __nb_objects = 0
 
@@ -83,3 +84,13 @@ class Base:
             dummy_instance = None
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        from os import path
+        file = "{}.json".format(cls.__name__)
+        if not path.isfile(file):
+            return []
+        with open(file, "r", encoding="utf-8") as f:
+            return [cls.create(**d) for d in cls.from_json_string(f.read())]
