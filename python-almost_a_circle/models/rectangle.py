@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module defines the class Rectangle that inherit of the class Base."""
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -19,6 +19,14 @@ class Rectangle(Base):
         __str__(): Return a sentence that describes the rectangle instance.
         update(): Update the value to each given attribute.
         to_dictionnary(): Return the dict representation of the rectangle.
+
+    Static methods:
+        (from parent class)
+        to_json_string(): Returns the JSON string representation.
+
+    Class methods:
+        (from parent class)
+        save_to_file(): Writes the JSON string representation to a file.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
