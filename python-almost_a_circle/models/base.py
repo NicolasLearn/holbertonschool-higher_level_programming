@@ -10,7 +10,10 @@ class Base:
         __nb_objects: Represents the number of objects created.
 
     Static methods:
-            to_json_string(): Returns the JSON string representation.
+        to_json_string(): Returns the JSON string representation.
+
+    Class methods:
+        save_to_file(): Writes the JSON string representation to a file.
     """
     __nb_objects = 0
 
@@ -36,3 +39,18 @@ class Base:
         if (list_dictionaries is None) or (not list_dictionaries):
             return "[]"
         return dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes the JSON string representation of (list_objs) to a file
+
+        Args:
+            list_objs (list): List of instances who inherit of class Base
+        """
+        filename = "{}.json".format(cls.__name__)
+        if list_objs is None:
+            cls_to_dict = []
+        else:
+            cls_to_dict = [inst.to_dictionary() for inst in list_objs]
+        with open(filename, 'w', encoding="utf-8") as file:
+            file.write(cls.to_json_string(cls_to_dict))
