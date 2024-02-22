@@ -23,6 +23,7 @@ class Rectangle(Base):
     Static methods:
         (from parent class)
         to_json_string(): Returns the JSON string representation.
+        from_json_string(): Returns the list of JSON string representation.
 
     Class methods:
         (from parent class)

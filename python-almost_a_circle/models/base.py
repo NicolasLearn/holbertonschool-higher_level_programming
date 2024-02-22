@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module defines the class Base"""
-from json import dumps
+from json import dumps, loads
 
 
 class Base:
@@ -11,6 +11,7 @@ class Base:
 
     Static methods:
         to_json_string(): Returns the JSON string representation.
+        from_json_string(): Returns the list of JSON string representation.
 
     Class methods:
         save_to_file(): Writes the JSON string representation to a file.
@@ -39,6 +40,17 @@ class Base:
         if (list_dictionaries is None) or (not list_dictionaries):
             return "[]"
         return dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of JSON string representation of (json_string).
+
+        Args:
+            json_string (str): String representing a list of dictionaries
+        """
+        if (json_string is None) or (not json_string):
+            return []
+        return loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
