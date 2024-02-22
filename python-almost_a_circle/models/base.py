@@ -15,6 +15,7 @@ class Base:
 
     Class methods:
         save_to_file(): Writes the JSON string representation to a file.
+        create(): Returns an instance with all attributes already set.
     """
     __nb_objects = 0
 
@@ -64,3 +65,21 @@ class Base:
             list_objs = [inst.to_dictionary() for inst in list_objs]
         with open(filename, 'w', encoding="utf-8") as file:
             file.write(cls.to_json_string(list_objs))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Return an instance with all attributes already set by (dictionary).
+
+        Args:
+            dictionary(dict): Individual pairs of (key=value) into dictionary.
+        """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls is Rectangle:
+            dummy_instance = Rectangle(1, 1)
+        elif cls is Square:
+            dummy_instance = Square(1)
+        else:
+            dummy_instance = None
+        dummy_instance.update(**dictionary)
+        return dummy_instance
