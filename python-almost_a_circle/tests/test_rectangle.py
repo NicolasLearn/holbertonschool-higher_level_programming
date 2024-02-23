@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """Unittest for the module rectangle, class Rectangle"""
 import unittest
-rectangle = __import__('models.rectangle').Rectangle
+import os
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestMaxInteger(unittest.TestCase):

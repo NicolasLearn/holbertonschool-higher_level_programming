@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Unittest for the module Base, class Base"""
 import unittest
+import os
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -135,8 +136,8 @@ were given"
     """Tests to save_to_file, tasks 16
     """
     def tests_save_to_file(self):
-        '''Tests save_to_file() method.'''
-        import os
+        """Tests save_to_file() method."""
+
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
@@ -175,7 +176,7 @@ were given"
     """Tests to from_json_string, tasks 17
     """
     def test_test_from_json_string(self):
-        '''Tests to_json_string() signature:'''
+        """Tests to_json_string() signature:"""
         with self.assertRaises(TypeError) as e:
             Base.from_json_string()
         s = "Base.from_json_string() missing 1 required positional argument: \
@@ -228,7 +229,7 @@ were given"
     """Tests to create, tasks 18
     """
     def test_create(self):
-        '''Tests create() method.'''
+        """Tests create() method."""
         r1 = Rectangle(3, 5, 1)
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
@@ -239,7 +240,7 @@ were given"
     """Tests to load_from_file, tasks 19
     """
     def test_load_from_file(self):
-        '''Tests load_from_file() method.'''
+        """Tests load_from_file() method."""
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
         list_in = [r1, r2]
