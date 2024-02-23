@@ -14,6 +14,10 @@ class TestBase(unittest.TestCase):
         """Update for each test"""
         Base._Base__nb_objects = 0
 
+    def tearDown(self):
+        '''Cleans up after each test_method.'''
+        pass
+
     def test_is_instance(self):
         """Test if b is a right instance"""
         b = Base()
