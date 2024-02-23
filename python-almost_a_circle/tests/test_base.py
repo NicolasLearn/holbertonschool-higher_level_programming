@@ -13,7 +13,6 @@ class TestBase(unittest.TestCase):
     def setUp(self):
         """Update for each test"""
         Base._Base__nb_objects = 0
-        pass
 
     def test_is_instance(self):
         """Test if b is a right instance"""
