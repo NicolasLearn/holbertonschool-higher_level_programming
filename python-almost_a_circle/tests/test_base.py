@@ -23,7 +23,7 @@ class TestBase(unittest.TestCase):
         """Tests if nb_objects is private class attribute."""
         b = Base()
         self.assertTrue(hasattr(Base, "_Base__nb_objects"))
-        self.assertTrue(b.id, 1)
+        self.assertEqual(b.id, 1)
 
     def test_initialization_of_attribute(self):
         """Test if nb_objects initializes to zero."""
