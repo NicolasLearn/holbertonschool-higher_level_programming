@@ -16,3 +16,4 @@ Directory project :
 12. Python - Input/Output
 13. Python - Almost a circle
 14. SQL - introduction
+15. SQL - More Queries
