@@ -18,3 +18,4 @@ Directory project :
 14. SQL - introduction
 15. SQL - More Queries
 16. Python - Object Relational Mapping
+17. JavaScript - DOM manipulation
